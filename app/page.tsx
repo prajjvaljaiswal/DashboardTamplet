@@ -1,4 +1,5 @@
 // import Image from "next/image";
+import PostTable from "@/components/PostTable";
 import DashboardCard from "../components/dashboard/DashboardCard";
 import { Folder, MessageCircle, Newspaper, User } from "lucide-react";
 
@@ -47,6 +48,7 @@ export default function Home() {
           }
         />
       </div>
+      <PostTable title={"Latest posts"}/>
     </>
   );
 }

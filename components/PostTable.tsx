@@ -16,8 +16,20 @@ interface PostTableProps {
   limit?: number;
   title?: String;
 }
+// sort date
+
+// const sortedPosts: Post[] = [...posts].sort(
+//   (a, b) => {
+//     return new Date(b.date).getTime() - new Date(a.date).getTime();
+//   }  
+// );
+// filter posts
+
+
 
 const PostTable = ({ limit, title }: PostTableProps) => {
+
+  const filterPost = limit ? posts.slice(0,limit) : posts 
   return (
     <div className="mt-10">
       <h1 className="text-2xl mb-4 font-semibold">{title ? title : "Post"}</h1>
@@ -32,7 +44,7 @@ const PostTable = ({ limit, title }: PostTableProps) => {
             </TableRow>
         </TableHeader>
         <TableBody>
-            {posts.map((post) => (
+            {filterPost.map((post) => (
                 <TableRow key={post.id}>
                     <TableCell>{post.title}</TableCell>
                     <TableCell className="hidden md:table-cell">{post.author}</TableCell>

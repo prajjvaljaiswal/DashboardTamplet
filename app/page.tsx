@@ -2,6 +2,7 @@
 import PostTable from "@/components/PostTable";
 import DashboardCard from "../components/dashboard/DashboardCard";
 import { Folder, MessageCircle, Newspaper, User } from "lucide-react";
+import AnalyticsChart from "@/components/AnalyticsChart";
 
 export default function Home() {
   return (
@@ -48,7 +49,8 @@ export default function Home() {
           }
         />
       </div>
-      <PostTable title={"Latest posts"}/>
+      <AnalyticsChart/>
+      <PostTable limit={5} title={"Latest posts"}/>
     </>
   );
 }
